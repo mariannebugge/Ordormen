@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">OrdOrmen</string>
+    <string name="language">Norsk</string>
+    <string name="antallOrd">/15 ord</string>
+    <string name="antallOrdFasit">15/15 ord</string>
+    <string name="fasitOrdene">Kalle Palle </string>
+
+    <string name="slett">Slett</string>
+    <string name="prov">Prøv</string>
+    <string name="finnOrd">Finn så mange ord som mulig</string>
+    <string name="dineOrd">Dine ord</string>
+    <string name="fasit">Fasit</string>
+
+    <string name="feilmelding0">Lykke til!</string>
+    <string name="feilmelding1">Det må være minst 4 bokstaver i ordet</string>
+    <string name="feilmelding2">E må være med i ordet</string>
+    <string name="feilmelding3">Er ikke en av ordene!</string>
+    <string name="feilmelding4">Ord allerede funnet!</string>
+    <string name="positiv">Supert!</string>
+
+    <string name="p">P</string>
+    <string name="s">S</string>
+    <string name="a">A</string>
+    <string name="e">E</string>
+    <string name="k">K</string>
+    <string name="m">M</string>
+    <string name="t">T</string>
+
+</resources>

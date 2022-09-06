@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WordWorm</string>
+    <string name="language">English</string>
+    <string name="antallOrd">/15 words</string>
+    <string name="antallOrdFasit">15/15 ord</string>
+    <string name="fasitOrdene">Kalle Palle</string>
+
+    <string name="slett">Delete</string>
+    <string name="prov">Try</string>
+    <string name="finnOrd">Find as many words as possible</string>
+    <string name="dineOrd">Your words</string>
+    <string name="fasit">Solution</string>
+
+    <string name="feilmelding0">Good Luck!</string>
+    <string name="feilmelding1">It must be a four letter word</string>
+    <string name="feilmelding2">E needs to be a part of the word</string>
+    <string name="feilmelding3">Is not one of the words!</string>
+    <string name="feilmelding4">Word already found!</string>
+    <string name="positiv">Super!</string>
+
+
+    <string name="p">P</string>
+    <string name="s">S</string>
+    <string name="a">A</string>
+    <string name="e">E</string>
+    <string name="k">K</string>
+    <string name="m">M</string>
+    <string name="t">T</string>
+</resources>

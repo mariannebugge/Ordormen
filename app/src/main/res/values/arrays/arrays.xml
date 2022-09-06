@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="solution_array" translatable="false">
+        <item>"PASSE"</item>
+        <item>"KASSE"</item>
+        <item>"TAKKE"</item>
+        <item>"MATTE"</item>
+    </string-array>
+</resources>
