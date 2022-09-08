@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="solution_array">
+        <item>"PASSE"</item>
+        <item>"KASSE"</item>
+        <item>"TAKKE"</item>
+        <item>"MATTE"</item>
+    </string-array>
+    <string-array name="hints">
+        <item>"P___E"</item>
+        <item>"K___E"</item>
+        <item>"T___E"</item>
+        <item>"M___E"</item>
+    </string-array>
+    <string-array name="found">
+    </string-array>
+</resources>

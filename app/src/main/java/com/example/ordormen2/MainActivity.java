@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -20,34 +21,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView antallOrd;
     TextView feilmelding, feilmelding1, feilmelding2, feilmelding3, feilmelding4;
     TextView positiv;
-    Button buttonDelete, buttonCheck, fasiten;
+    Button buttonDelete, buttonCheck, fasiten, buttonHint;
     Button buttonP, buttonS, buttonA, buttonE, buttonK, buttonM, buttonT;
     String word = ""; //Ordet som lages.
     ArrayList<String> wordsFound = new ArrayList<>(); //String array med ordene som er funnet av brukeren.
-    ArrayList<String> fasitOrdene = new ArrayList<>();
-    String fasitOrdene;
+    ArrayList<String> fasitOrdeneList = new ArrayList<>();
+    String[] ordFunnet;
+    String[] fasitOrdene;
     ListView show;
+    String letterE;
 
-    private int letters = 0; //Antall bokstaver i ordet
-    private int correctWordCounter = 0; //Teller riktige ord
+    private int letters; //Antall bokstaver i ordet
+    private int correctWordCounter; //Teller riktige ord
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Starter med å oppdatere 0 på korrekt ord telleren
+
+
         //Brukeren sitt inputsted
         inputText = (TextView) findViewById(R.id.inputText);
 
-        String fasitOrdene;
-        List<String> fasitListe = new ArrayList<>();
-        fasitListe.add("KAMME");
-        fasitListe.add("PASSE");
-        fasitListe.add("SAMME");
-
-
         //Linke variablene til id-en deres
         buttonDelete = (Button) findViewById(R.id.buttonDelete);
+        buttonHint = (Button) findViewById(R.id.buttonHint);
         buttonCheck = (Button) findViewById(R.id.buttonCheck);
         feilmelding = (TextView) findViewById(R.id.feilmelding); //Lykke til!
         feilmelding1 = (TextView) findViewById(R.id.feilmelding); //Må være fire bokstaver
@@ -60,7 +60,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         positiv = (TextView) findViewById(R.id.feilmelding); //Supert!
 
-       // fasitOrdene = getResources().getStringArray(R.array.solution_array); //HVORFOR BLIR DENNE RØD?
+        //Fasitordene som ligger i array
+        fasitOrdene = getResources().getStringArray(R.array.solution_array);
+        fasitOrdeneList.addAll(Arrays.asList(fasitOrdene));
+
+        //Array til å plassere ordene som blir funnet av brukeren
+        ordFunnet = getResources().getStringArray(R.array.found);
+        wordsFound.addAll(Arrays.asList(ordFunnet));
+
 
         fasiten = (Button) findViewById(R.id.fasiten);
         buttonP = (Button) findViewById(R.id.buttonP);
@@ -89,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonM.setOnClickListener(clickOnLetter);
         buttonT.setOnClickListener(clickOnLetter);
 
+
         //Sletter en og en bokstav fra ordet.
         buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,54 +114,71 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //Sjekker om svaret er korrekt eller ikke og får tilbakemeldinger
         View.OnClickListener checkWord = (view) -> {
+            //Sjekker om inputfeltet er tomt
+            if (word.equals("")) {
+                Toast.makeText(getBaseContext(), getResources().getString(R.string.feilmelding1), Toast.LENGTH_LONG).show();
+            }
+
+            //Dersom feltet ikke er tomt sjekk hvor mange bokstaver som er i ordet.
             if (!word.equals("")) {
-                if (letters < 4) {
-                    String fewCharacters = feilmelding1.getText().toString();
-                    feilmelding.setText(fewCharacters); //REFERER TIL FEILMELDING 1 I STRINGS
 
-                    //Gi hint når ordet er feil ved trykk med prøv
-
-                }
-
-                //Dersom ikke bokstaven E er brukt i ordet - feilmelding
-                if(!buttonE.callOnClick()){
-                    Toast.makeText(getBaseContext(), getResources().getString(R.string.feilmelding2), Toast.LENGTH_LONG).show();
+                if (word.length() < 4) {
+                    Toast.makeText(getBaseContext(), getResources().getString(R.string.feilmelding1), Toast.LENGTH_LONG).show();
                 }
 
                 //Dersom det er rett antall bokstaver, sjekk svarordet ved å gå til funksjonen
-                if (letters >= 4) {
-                    if(word.equals(fasitListe)){
-                        String getInput = inputText.getText().toString();
-                        if(wordsFound.contains(getInput)){
-                            Toast.makeText(getBaseContext(), getResources().getString(R.string.feilmelding4), Toast.LENGTH_LONG).show();
+                if (word.length() >= 4) {
+                    //Dersom E inkluderes i ordet
+                    buttonE = (Button) findViewById(R.id.buttonE);
+                    letterE = getResources().getString(R.string.e);
+
+                    //Sjekker om ordet inneholder den midterste bokstaven
+                    if(word.contains(letterE)){
+                        if(fasitOrdeneList.contains(word)) {
+                            String getInput = inputText.getText().toString();
+                            if (wordsFound.contains(getInput)) {
+                                Toast.makeText(getBaseContext(), getResources().getString(R.string.feilmelding4), Toast.LENGTH_LONG).show();
+                                //Fjerner ordet fra bruker og resetter inputfeltet
+                                ((TextView) findViewById(R.id.inputText)).setText("");
+                                word = "";
+                            } else if (getInput == null || getInput.trim().equals("")) {
+                                String fewLetters = feilmelding1.getText().toString(); //Må være 4 bokstaver
+                                feilmelding.setText(fewLetters);
+                                Toast.makeText(getBaseContext(), fewLetters, Toast.LENGTH_LONG).show();
+                            } else {
+                                wordsFound.add(getInput);
+                                //Legger inn i liste som er synlig for brukeren
+                                ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, wordsFound);
+                                show.setAdapter(adapter);
+                                ((TextView) findViewById(R.id.inputText)).setText("");
+                                Toast.makeText(getBaseContext(), getResources().getString(R.string.positiv), Toast.LENGTH_LONG).show();
+                                //Oppdaterer funnet ord av totale antallet.
+                                String updateWords = (correctWordCounter++) + antallOrd.getText().toString();
+                                antallOrd.setText(updateWords);
+                                word = "";
+                            }
                         }
-                        else if(getInput == null || getInput.trim().equals("")){
-                            String fewLetters = feilmelding1.getText().toString(); //Må være 4 bokstaver
-                            feilmelding.setText(fewLetters);
-                            Toast.makeText(getBaseContext(), fewLetters, Toast.LENGTH_LONG).show();
-                        }
-                        else{
-                            wordsFound.add(getInput);
-                            ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, wordsFound);
-                            show.setAdapter(adapter);
-                            ((TextView)findViewById(R.id.inputText)).setText(" ");
-                            //Oppdaterer funnet ord av totale antallet.
-                            String oppdaterWords = correctWordCounter++ + "" + antallOrd.getText().toString();
-                            antallOrd.setText(oppdaterWords);
-                        }
-
-                        //Ordet som er skrevet lagres i en liste
-
-
-                        //Antall ord går oppover
-
-
+                    }
+                    else{
+                        Toast.makeText(getBaseContext(), getResources().getString(R.string.feilmelding2), Toast.LENGTH_LONG).show();
+                    }
                     }
                 }
+        };
+
+
+        //Gi hint når spørsmålstegn blir trykket
+        View.OnClickListener showHint = (view) -> {
+            //Luke ut hint fra ord som er allerede tatt.
+            if(!fasitOrdeneList.contains(wordsFound)){
+
             }
         };
 
+
         buttonCheck.setOnClickListener(checkWord);
+
+        //buttonHint.setOnClickListener(showHint);
 
 
         //Skifter til nytt bilde når fasit klikkes på, viser fasitordene

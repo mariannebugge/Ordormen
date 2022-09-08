@@ -11,6 +11,7 @@
     <string name="finnOrd">Find as many words as possible</string>
     <string name="dineOrd">Your words</string>
     <string name="fasit">Solution</string>
+    <string name="sprs">Hint</string>
 
     <string name="feilmelding0">Good Luck!</string>
     <string name="feilmelding1">It must be a four letter word</string>
