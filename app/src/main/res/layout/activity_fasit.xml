@@ -20,16 +20,6 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/antallOrd"
-        style="@style/antallOrd"
-        android:text="@string/antallOrdFasit"
-        android:layout_marginStart="-120dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="-20dp"
-        app:layout_constraintBottom_toBottomOf="@id/overskrift"
-        app:layout_constraintStart_toStartOf="@id/overskrift" />
-
-    <TextView
         android:id="@+id/dineOrdFasit"
         style="@style/dineOrdFasit"
         android:layout_marginStart="52dp"

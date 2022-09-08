@@ -5,13 +5,12 @@
         <item>"KASSE"</item>
         <item>"TAKKE"</item>
         <item>"MATTE"</item>
-    </string-array>
-    <string-array name="hints">
-        <item>"P___E"</item>
-        <item>"K___E"</item>
-        <item>"T___E"</item>
-        <item>"M___E"</item>
+        <item>"MEKKE"</item>
+        <item>"PAKKET"</item>
+        <item>"PEKE"</item>
     </string-array>
     <string-array name="found">
+    </string-array>
+    <string-array name="remain">
     </string-array>
 </resources>
