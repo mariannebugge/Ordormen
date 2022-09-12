@@ -1,5 +1,6 @@
 package com.example.ordormen2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -36,6 +37,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String letterE;
 
     int correctWordCounter = 1; //Teller riktige ord
+
+    //Får applikasjonen til å huske tilstanden ved rotasjon og lignende, og resette seg når appen lukkes
+    /*
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+
+    }
+
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState){
+
+    }
+
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -194,7 +208,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 wordsRemaining.remove(word);
                                 wordsFound1.add(word);
                                 //Oppdaterer funnet ord av totale antallet.
-                                String updateWords = correctWordCounter++ + antallOrd.getText().toString();
+                                String updateWords = correctWordCounter++ + " /15 ord";
                                 antallOrd.setText(updateWords);
                                 //Resetter word
                                 word = "";

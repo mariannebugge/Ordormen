@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ordormenback"
+    android:background="@drawable/ordomen_liggende_bakgrunn"
     android:fillViewport="true"
     tools:context=".Fasit">
 
@@ -20,15 +20,15 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <ListView
-        android:id="@+id/solution"
-        style="@style/delete"
+        android:id="@+id/dineOrdFasit"
+        style="@style/dineOrdFasit"
         android:layout_width="290dp"
-        android:layout_height="438dp"
-        android:layout_marginStart="35dp"
+        android:layout_height="238dp"
+        android:layout_marginStart="220dp"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="33dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
