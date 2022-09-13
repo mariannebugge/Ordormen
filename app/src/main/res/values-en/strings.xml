@@ -4,6 +4,7 @@
     <string name="language">English</string>
     <string name="antallOrd">/15 words</string>
     <string name="antallOrdFasit">15/15 ord</string>
+    <string name="fasitListe"></string>
 
     <string name="slett">Delete</string>
     <string name="prov">Try</string>
@@ -20,11 +21,11 @@
     <string name="positiv">Super!</string>
 
 
-    <string name="p">P</string>
-    <string name="s">S</string>
-    <string name="a">A</string>
+    <string name="b">P</string>
+    <string name="d">S</string>
+    <string name="m">A</string>
     <string name="e">E</string>
-    <string name="k">K</string>
-    <string name="m">M</string>
-    <string name="t">T</string>
+    <string name="o">K</string>
+    <string name="p">M</string>
+    <string name="j">T</string>
 </resources>

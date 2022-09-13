@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView feilmelding, feilmelding1, feilmelding2, feilmelding3, feilmelding4;
     TextView positiv;
     Button buttonDelete, buttonCheck, fasiten, buttonHint;
-    Button buttonP, buttonS, buttonA, buttonE, buttonK, buttonM, buttonT;
+    Button buttonB, buttonD, buttonM, buttonE, buttonO, buttonP, buttonJ;
     String word = ""; //Ordet som lages.
     ArrayList<String> wordsFound = new ArrayList<>(); //String array med ordene som er funnet av brukeren. Vises fram
     ArrayList<String> wordsFound1 = new ArrayList<>();
@@ -99,13 +99,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         fasiten = (Button) findViewById(R.id.fasiten);
-        buttonP = (Button) findViewById(R.id.buttonP);
-        buttonS = (Button) findViewById(R.id.buttonS);
-        buttonA = (Button) findViewById(R.id.buttonA);
-        buttonE = (Button) findViewById(R.id.buttonE);
-        buttonK = (Button) findViewById(R.id.buttonK);
+        buttonB = (Button) findViewById(R.id.buttonB);
+        buttonD = (Button) findViewById(R.id.buttonD);
         buttonM = (Button) findViewById(R.id.buttonM);
-        buttonT = (Button) findViewById(R.id.buttonT);
+        buttonE = (Button) findViewById(R.id.buttonE);
+        buttonO = (Button) findViewById(R.id.buttonO);
+        buttonP = (Button) findViewById(R.id.buttonP);
+        buttonJ = (Button) findViewById(R.id.buttonJ);
 
         //Skriver bokstaven på knappen i inputText, textview-et
         View.OnClickListener clickOnLetter = (view) -> {
@@ -115,13 +115,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         };
 
         //Alle bokstavknappene kaller på funksjonen som skriver ut bokstavene.
-        buttonP.setOnClickListener(clickOnLetter);
-        buttonS.setOnClickListener(clickOnLetter);
-        buttonA.setOnClickListener(clickOnLetter);
-        buttonE.setOnClickListener(clickOnLetter);
-        buttonK.setOnClickListener(clickOnLetter);
+        buttonB.setOnClickListener(clickOnLetter);
+        buttonD.setOnClickListener(clickOnLetter);
         buttonM.setOnClickListener(clickOnLetter);
-        buttonT.setOnClickListener(clickOnLetter);
+        buttonE.setOnClickListener(clickOnLetter);
+        buttonO.setOnClickListener(clickOnLetter);
+        buttonM.setOnClickListener(clickOnLetter);
+        buttonJ.setOnClickListener(clickOnLetter);
 
 
         //Sletter en og en bokstav fra ordet.
@@ -212,7 +212,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 wordsRemaining.remove(word);
                                 wordsFound1.add(word);
                                 //Oppdaterer funnet ord av totale antallet.
-                                String updateWords = correctWordCounter++ + " /15 ord";
+                                String updateWords = correctWordCounter++ + " /30 ord";
                                 antallOrd.setText(updateWords);
                                 //Resetter word
                                 word = "";

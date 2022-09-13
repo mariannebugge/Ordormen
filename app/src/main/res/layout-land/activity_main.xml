@@ -123,9 +123,9 @@
 
 
         <Button
-            android:id="@+id/buttonP"
-            style="@style/bokstavenP"
-            android:text="@string/p"
+            android:id="@+id/buttonB"
+            style="@style/bokstavenB"
+            android:text="@string/b"
             android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="@id/fasiten"
             android:layout_marginLeft="-410dp"
@@ -136,32 +136,32 @@
             />
 
         <Button
-            android:id="@+id/buttonT"
-            style="@style/bokstavenT"
-            android:text="@string/t"
+            android:id="@+id/buttonJ"
+            style="@style/bokstavenJ"
+            android:text="@string/j"
             android:layout_marginStart="30dp"
             android:layout_marginTop="-65dp"
             app:layout_constraintStart_toStartOf="@id/overskrift"
-            app:layout_constraintTop_toTopOf="@id/buttonK"/>
+            app:layout_constraintTop_toTopOf="@id/buttonO"/>
 
         <Button
-            android:id="@+id/buttonM"
-            style="@style/bokstavenM"
-            android:text="@string/m"
+            android:id="@+id/buttonP"
+            style="@style/bokstavenP"
+            android:text="@string/p"
             android:layout_marginStart="50dp"
             android:layout_marginTop="90dp"
             app:layout_constraintBottom_toBottomOf="@id/overskrift"
             app:layout_constraintStart_toStartOf="@id/buttonE" />
 
         <Button
-            android:id="@+id/buttonK"
-            style="@style/bokstavenK"
-            android:text="@string/k"
+            android:id="@+id/buttonO"
+            style="@style/bokstavenO"
+            android:text="@string/o"
             android:layout_marginStart="50dp"
             android:layout_marginTop="130dp"
-            app:layout_constraintBottom_toBottomOf="@id/buttonM"
-            app:layout_constraintStart_toStartOf="@id/buttonM"
-            app:layout_constraintTop_toTopOf="@id/buttonM"/>
+            app:layout_constraintBottom_toBottomOf="@id/buttonP"
+            app:layout_constraintStart_toStartOf="@id/buttonP"
+            app:layout_constraintTop_toTopOf="@id/buttonP"/>
 
         <Button
             android:id="@+id/buttonE"
@@ -170,29 +170,28 @@
             android:layout_marginStart="55dp"
             android:layout_marginTop="65dp"
             android:layout_marginBottom="0dp"
-            app:layout_constraintStart_toStartOf="@id/buttonA"
-            app:layout_constraintTop_toTopOf="@id/buttonM"/>
+            app:layout_constraintStart_toStartOf="@id/buttonM"
+            app:layout_constraintTop_toTopOf="@id/buttonP"/>
 
         <Button
-            android:id="@+id/buttonS"
-            style="@style/bokstavenS"
-            android:text="@string/s"
+            android:id="@+id/buttonD"
+            style="@style/bokstavenD"
+            android:text="@string/d"
             android:layout_marginStart="40dp"
             android:layout_marginTop="80dp"
             android:layout_marginBottom="0dp"
-            app:layout_constraintBottom_toBottomOf="@id/buttonA"
-            app:layout_constraintStart_toStartOf="@id/buttonP" />
-
+            app:layout_constraintBottom_toBottomOf="@id/buttonM"
+            app:layout_constraintStart_toStartOf="@id/buttonB" />
 
         <Button
-            android:id="@+id/buttonA"
-            style="@style/bokstavenA"
-            android:text="@string/a"
+            android:id="@+id/buttonM"
+            style="@style/bokstavenM"
+            android:text="@string/m"
             android:layout_marginStart="50dp"
             android:layout_marginTop="-65dp"
             android:layout_marginBottom="0dp"
-            app:layout_constraintStart_toStartOf="@id/buttonS"
-            app:layout_constraintTop_toTopOf="@id/buttonS"/>
+            app:layout_constraintStart_toStartOf="@id/buttonD"
+            app:layout_constraintTop_toTopOf="@id/buttonD"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"

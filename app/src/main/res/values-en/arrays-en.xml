@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="solution_array">
+        <item>"ØMMEDE"</item>
+        <item>"ØMME"</item>
+        <item>"ØDEM"</item>
+        <item>"ØDEDE"</item>
+        <item>"PEPP"</item>
+        <item>"MØDE"</item>
+        <item>"MEDED"</item>
+        <item>"JØDE"</item>
+        <item>"JEPP"</item>
+        <item>"JEEP"</item>
+        <item>"EBBEDE"</item>
+        <item>"EBBE"</item>
+        <item>"DØPE"</item>
+        <item>"DØMME"</item>
+        <item>"DØDEDE"</item>
+        <item>"DØDE"</item>
+        <item>"DØDDE"</item>
+        <item>"DJEMBE"</item>
+        <item>"DEPPEDE"</item>
+        <item>"DEPPE"</item>
+        <item>"DEPP"</item>
+        <item>"DEMPEDE"</item>
+        <item>"DEMPE"</item>
+        <item>"DEMP"</item>
+        <item>"DEMMEDE"</item>
+        <item>"DEMME"</item>
+        <item>"BEDØMME"</item>
+        <item>"BEDØM"</item>
+        <item>"BEDE"</item>
+    </string-array>
+    <string-array name="found">
+    </string-array>
+    <string-array name="remain">
+    </string-array>
+</resources>
