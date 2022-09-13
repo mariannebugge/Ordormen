@@ -41,7 +41,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //Får applikasjonen til å huske tilstanden ved rotasjon og lignende, og resette seg når appen lukkes
     /*
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    protected void super.onSaveInstanceState(Bundle outState) {
+
+        buttonHint = (Button) findViewById(R.id.buttonHint);
+        antallOrd = (TextView) findViewById(R.id.antallOrd);
+        show = (ListView) findViewById(R.id.ordFunnet);
 
     }
 
