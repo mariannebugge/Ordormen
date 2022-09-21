@@ -33,12 +33,12 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <ListView
-        android:id="@+id/dineOrdFasit"
+        android:id="@+id/solution"
         style="@style/dineOrdFasit"
         android:layout_width="290dp"
         android:layout_height="238dp"
         android:layout_marginStart="210dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:layout_marginBottom="33dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

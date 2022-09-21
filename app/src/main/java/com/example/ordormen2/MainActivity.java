@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int correctWordCounter = 1; //Teller riktige ord
 
     //Får applikasjonen til å huske tilstanden ved rotasjon og lignende, og resette seg når appen lukkes
-
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -52,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         outState.putString("hint", feilmelding.getText().toString());
         outState.putStringArrayList("wordsFound", wordsFound);
         outState.putString("antallOrd", antallOrd.getText().toString());
-
     }
 
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState){

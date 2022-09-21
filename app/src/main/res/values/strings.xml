@@ -2,7 +2,6 @@
     <string name="app_name">OrdOrmen</string>
     <string name="language">Norsk</string>
     <string name="antallOrd">/30 ord</string>
-    <string name="antallOrdFasit">15/15 ord</string>
     <string name="fasitListe"></string>
 
     <string name="slett">Slett</string>
