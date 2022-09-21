@@ -35,25 +35,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String hintWord = "";
     ListView show;
     String letterE;
+    ArrayAdapter<String> adapter;
 
     int correctWordCounter = 1; //Teller riktige ord
 
     //Får applikasjonen til å huske tilstanden ved rotasjon og lignende, og resette seg når appen lukkes
-    /*
-    @Override
-    protected void super.onSaveInstanceState(Bundle outState) {
 
-        buttonHint = (Button) findViewById(R.id.buttonHint);
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
         antallOrd = (TextView) findViewById(R.id.antallOrd);
-        show = (ListView) findViewById(R.id.ordFunnet);
+        feilmelding = (TextView) findViewById(R.id.feilmelding);
+
+        // outState.putString("hint", hintWord);
+        outState.putString("hint", feilmelding.getText().toString());
+        outState.putStringArrayList("wordsFound", wordsFound);
+        outState.putString("antallOrd", antallOrd.getText().toString());
 
     }
 
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState){
+        antallOrd = (TextView) findViewById(R.id.antallOrd);
+        show = (ListView) findViewById(R.id.ordFunnet);
+        feilmelding = (TextView) findViewById(R.id.feilmelding);
+        inputText = (TextView) findViewById(R.id.inputText);
+
+        hintWord = savedInstanceState.getString("hint");
+        wordsFound.addAll(savedInstanceState.getStringArrayList("wordsFound"));
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, wordsFound);
+        show.setAdapter(adapter);
+
+        antallOrd.setText(savedInstanceState.getString("antallOrd"));
+
+        //feilmelding.setText(hintWord);
+        feilmelding.setText("");
+        feilmelding.setText(savedInstanceState.getString("hint"));
+
+        word = savedInstanceState.getString("word");
+        inputText.setText(savedInstanceState.getString("word"));
 
     }
 
-     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonM.setOnClickListener(clickOnLetter);
         buttonE.setOnClickListener(clickOnLetter);
         buttonO.setOnClickListener(clickOnLetter);
-        buttonM.setOnClickListener(clickOnLetter);
+        buttonP.setOnClickListener(clickOnLetter);
         buttonJ.setOnClickListener(clickOnLetter);
 
 
@@ -204,7 +227,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             } else {
                                 wordsFound.add(getInput);
                                 //Legger inn i liste som er synlig for brukeren
-                                ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, wordsFound);
+                                adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, wordsFound);
                                 show.setAdapter(adapter);
                                 ((TextView) findViewById(R.id.inputText)).setText("");
                                 Toast.makeText(getBaseContext(), getResources().getString(R.string.positiv), Toast.LENGTH_LONG).show();

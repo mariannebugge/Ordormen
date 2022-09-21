@@ -126,7 +126,7 @@
         app:layout_constraintTop_toTopOf="@id/fasiten"
         android:layout_marginBottom="0dp"
         android:layout_marginLeft="-55dp"
-        android:layout_marginTop="-400dp"
+        android:layout_marginTop="-410dp"
         app:layout_constraintStart_toStartOf="@id/buttonDelete"
        />
 
