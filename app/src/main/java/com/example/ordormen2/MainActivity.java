@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        //Gi hint når spørsmålstegn blir trykket
+        //Gi hint når Hint blir trykket
         View.OnClickListener showHint = (view) -> {
             //Luke ut hint fra ord som er allerede tatt.
             //Sjekke om ordene funnet finnes i wordremaining og ikke i wordsfound
@@ -245,6 +245,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             ((TextView) findViewById(R.id.inputText)).setText("");
                             word = "";
                         }
+                    }
+                    //Dersom E ikke er med i ordet kommer feilmelding
+                    else{
+                        Toast.makeText(getBaseContext(), getResources().getString(R.string.feilmelding2), Toast.LENGTH_LONG).show();
+                        ((TextView) findViewById(R.id.inputText)).setText("");
+                        word = "";
                     }
 
 
